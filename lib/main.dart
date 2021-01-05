@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import './question.dart';
+import './Answer.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
-
   @override
   State<StatefulWidget> createState() {
     return new _MyAppState();
@@ -25,29 +26,20 @@ class _MyAppState extends State<MyApp> {
     ];
     return MaterialApp(
         home: Scaffold(
-          appBar: AppBar(
-            title: Text('این نرم افزار من است'),
+      appBar: AppBar(
+        title: Text('این نرم افزار من است'),
+      ),
+      body: Column(
+        children: [
+          Question(
+            questions[_questionIndex],
           ),
-          body: Column(
-            children: [
-              Text(questions[_questionIndex]),
-              RaisedButton(
-                child: Text('Answer 1'),
-                onPressed: _answerQuestions,
-              ),
-              RaisedButton(
-                child: Text('Answer 1'),
-                onPressed: _answerQuestions,
-              ),
-              RaisedButton(
-                child: Text('Answer 1'),
-                onPressed: () {
-                  _answerQuestions();
-                },
-              ),
-            ],
-          ),
-        ));
+          Answer(_answerQuestions),
+          Answer(_answerQuestions),
+          Answer(_answerQuestions),
+        ],
+      ),
+    ));
   }
 
   void _answerQuestions() {
