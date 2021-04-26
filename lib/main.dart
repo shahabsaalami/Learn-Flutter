@@ -5,46 +5,61 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: true,
-      home: AppHome(),
+    return new MaterialApp(
+      home: new MyHomePage(
+        title: "MyFlutterApp",
+      ),
     );
   }
 }
 
-class AppHome extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+
+  final String title;
+  MyHomePage({this.title});
+
   @override
+  State<StatefulWidget> createState() {
+    return MyHomePageState();
+  }
+
+}
+  class MyHomePageState extends State<MyHomePage>{
+    var counter = 0;
+    @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-            icon: new Icon(Icons.menu),
-            tooltip: 'Navigation menu',
-            onPressed: () {
-              print('press');
-            }),
-        title: Text('My App!'),
-        actions: [
-          IconButton(
-              icon: new Icon(Icons.search),
-              tooltip: 'Find what you want',
-              onPressed: () {
-                print('search pressed');
-              }),
-        ],
-      ),
-      body: new Center(
-        child: new Text(
-          "Hello Flutter!\nlet`s lunch awesome application",
-          textAlign: TextAlign.center,
+      return Scaffold(
+        appBar: new AppBar(
+          backgroundColor: Colors.amber,
+          title: new Text(
+            widget.title,
+          ),
         ),
-      ),
-      floatingActionButton: new FloatingActionButton(
-          tooltip: 'This is a Floating Button',
+        body: new Center(
+          child: new Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              new Text('You have pushed the button this many times:'),
+              new Text(
+                '$counter',
+                style: Theme.of(context).textTheme.headline2,
+              )
+            ],
+          ),
+        ),
+        floatingActionButton: new FloatingActionButton(
+          backgroundColor: Colors.amber,
+          onPressed: () {
+            setState(() {
+              ++counter;
+            });
+          },
           child: Icon(Icons.add),
-          onPressed: () {}),
-    );
+        ),
+      );
   }
 }
