@@ -1,6 +1,5 @@
 # Hone Flutter skill
 working widgets include:
 
-- ImageButtons
+- BottomNavigationBarItem
 - NavigationButtons
-- Scafold
