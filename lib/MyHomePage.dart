@@ -156,16 +156,6 @@ class MyHomePagesState extends State<MyHomePages> {
                 icon: Icon(
                   Icons.account_box,
                   color: Colors.black87,
-                )),    BottomNavigationBarItem(
-                label: 'profile',
-                icon: Icon(
-                  Icons.account_box,
-                  color: Colors.black87,
-                )),    BottomNavigationBarItem(
-                label: 'profile',
-                icon: Icon(
-                  Icons.account_box,
-                  color: Colors.black87,
                 )),
           ],
           onTap: changePage,
