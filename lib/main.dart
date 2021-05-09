@@ -11,13 +11,17 @@ class MyApp extends StatelessWidget {
       title: 'Instagram',
       debugShowCheckedModeBanner: false,
       theme: new ThemeData(
+          fontFamily: 'vazir',
           primaryIconTheme: IconThemeData(
             color: Colors.black,
           ),
           primaryTextTheme: TextTheme(
             title: TextStyle(color: Colors.black),
           )),
-      home: MyHomePages(),
+      home: new Directionality(
+        textDirection: TextDirection.rtl,
+        child: MyHomePages(),
+      ),
     );
   }
 }

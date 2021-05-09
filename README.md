@@ -1,7 +1,2 @@
 # Hone Flutter skill
-working widgets include:
-
-- BoxDecoration
-- NetworkImage
-- CircleAvatar
-- Stack
+add custom font family and set rtl for all widgets.

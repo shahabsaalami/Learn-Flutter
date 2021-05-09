@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hone_flutter_skill/list_stories.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
+import 'package:hone_flutter_skill/list_stories.dart';
 
 class HomePage extends StatelessWidget {
   final instaPost = new Column(
@@ -14,7 +13,7 @@ class HomePage extends StatelessWidget {
           children: [
             new Row(children: [
               Container(
-                margin: EdgeInsets.only(right: 8.0),
+                margin: EdgeInsets.only(left: 8.0),
                 height: 40.0,
                 width: 40.0,
                 decoration: BoxDecoration(
@@ -26,8 +25,8 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Text(
-                "Shahab saalami",
-                style: TextStyle(fontWeight: FontWeight.bold),
+                "شهاب سلامی",
+                style: TextStyle(fontWeight: FontWeight.bold, fontFamily: 'Vazir'),
               )
             ]),
             IconButton(
@@ -54,9 +53,33 @@ class HomePage extends StatelessWidget {
           children: [
             Row(
               children: [
-                IconButton(icon: Icon(FontAwesomeIcons.heart), onPressed: null),
-                IconButton(icon: Icon(FontAwesomeIcons.comment), onPressed: null),
-                IconButton(icon: Icon(FontAwesomeIcons.bookmark), onPressed: null)
+                GestureDetector(
+                  onTap: () {
+                    print('pressed');
+                  },
+                  child: Padding(
+                    child: Icon(FontAwesomeIcons.heart),
+                    padding: EdgeInsets.symmetric(horizontal: 4.0),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    print('pressed');
+                  },
+                  child: Padding(
+                    child: Icon(FontAwesomeIcons.comment),
+                    padding: EdgeInsets.symmetric(horizontal: 4.0),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    print('pressed');
+                  },
+                  child: Padding(
+                    child: Icon(FontAwesomeIcons.bookmark),
+                    padding: EdgeInsets.symmetric(horizontal: 4.0),
+                  ),
+                ),
               ],
             ),
             IconButton(icon: Icon(FontAwesomeIcons.bookmark), onPressed: null)
@@ -65,7 +88,7 @@ class HomePage extends StatelessWidget {
       ),
       Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.0),
-        child: Text("این پست را علی و 5000 نفر دیگر لایک کرده اند"),
+        child: Text("این پست را علی و 5001 نفر دیگر لایک کرده اند"),
       ),
       Padding(
         padding: EdgeInsets.fromLTRB(16.0, 16.0, 0.0, 8.0),

@@ -5,20 +5,20 @@ class ListStories extends StatelessWidget {
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
       new Text(
-        'stories',
+        'استوری ها',
         style: TextStyle(
           fontWeight: FontWeight.bold,
         ),
       ),
       new Row(
         children: [
+          new Icon(Icons.play_arrow),
           new Text(
-            'Watch all',
+            'تماشا همه',
             style: TextStyle(
               fontWeight: FontWeight.bold,
             ),
           ),
-          new Icon(Icons.play_arrow)
         ],
       )
     ],
