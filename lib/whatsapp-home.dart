@@ -27,7 +27,28 @@ class WhatsAppHomeState extends State with SingleTickerProviderStateMixin {
           Icon(Icons.search),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 10),
-            child: Icon(Icons.more_vert),
+            child: PopupMenuButton(
+              onSelected: (choice) {
+                print(choice);
+              },
+              itemBuilder: (BuildContext context) {
+                return [
+                  PopupMenuItem(
+                    child: Row(
+                        children: [Text('گروه نو')],
+                        mainAxisAlignment: MainAxisAlignment.end),
+                    value: 'newGroup',
+                  ),
+                  PopupMenuItem(
+                    child: Row(
+                      children: [Text('تنظیمات')],
+                      mainAxisAlignment: MainAxisAlignment.end,
+                    ),
+                    value: 'setting',
+                  ),
+                ];
+              },
+            ),
           ),
         ],
         bottom: TabBar(
@@ -49,6 +70,16 @@ class WhatsAppHomeState extends State with SingleTickerProviderStateMixin {
           CallScreen(),
           StatusScreen(),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Theme.of(context).accentColor,
+        child: Icon(
+          Icons.message,
+          color: Colors.white,
+        ),
+        onPressed: () {
+          print('open chat');
+        },
       ),
     );
   }

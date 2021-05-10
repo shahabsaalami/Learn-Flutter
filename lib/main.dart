@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
           fontFamily: 'vazir',
           primaryColor: Color(0xff075e54),
+          accentColor: Color(0xff25d366)
           // primaryIconTheme: IconThemeData(
           //   color: Colors.black,
           // ),
