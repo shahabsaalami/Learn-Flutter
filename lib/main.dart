@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hone_flutter_skill/MyHomePage.dart';
+import 'package:hone_flutter_skill/whatsapp-home.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,15 +12,17 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: new ThemeData(
           fontFamily: 'vazir',
-          primaryIconTheme: IconThemeData(
-            color: Colors.black,
-          ),
-          primaryTextTheme: TextTheme(
-            title: TextStyle(color: Colors.black),
-          )),
+          primaryColor: Color(0xff075e54),
+          // primaryIconTheme: IconThemeData(
+          //   color: Colors.black,
+          // ),
+          // primaryTextTheme: TextTheme(
+          //   title: TextStyle(color: Colors.black),
+          // )
+      ),
       home: new Directionality(
         textDirection: TextDirection.rtl,
-        child: MyHomePages(),
+        child: WhatsAppHome(),
       ),
     );
   }
